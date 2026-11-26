@@ -77,9 +77,9 @@ function buildPickStates() {
 function addFallbackOdds(matrix, taken, prob) {
   let skippedSlotsByPriorGroups = 0;
 
-  for (let gIdx = 0; gIdx < G; gIdx++) {
-    const group = GROUPS[gIdx];
-    const k = taken[gIdx];
+  for (let gIndex = 0; gIndex < G; gIndex++) {
+    const group = GROUPS[gIndex];
+    const k = taken[gIndex];
     const N = group.teamCount;
     const probNotPickedInTop4 = (N - k) / N;
 
@@ -149,7 +149,7 @@ function main() {
     `Calculated exact fallback odds for ${TOTAL_TEAMS} teams across ${G} group(s).\n`,
   );
 
-  console.log("VERIFYING NON-UNIFORM DISTRIBUTION (Group 1 Slices):");
+  console.log("Verifying non-uniform distribution:");
   const sampleRanks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
   const testPicks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
